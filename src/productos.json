@@ -63,7 +63,7 @@
   },    
   {
       "id": 8,
-      "img": "../src/imagenes/argentina titular.webp",
+      "img": "../src/imagenes/argentina titular.jpg",
       "nombre": "Camiseta de Argentina",
       "desc":"Camiseta titular de Argentina Campeon Qatar 2022",
       "precio":  15000,
@@ -82,7 +82,7 @@
 },
 {
     "id": 10,
-    "img": "../src/imagenes/argentina 2022 suplente.avif",
+    "img": "../src/imagenes/argentina 2022 suplente.jpg",
     "nombre": "Camiseta de Argentina",
     "desc":"Camiseta suplente de Argentina Campeon Qatar 2022",
     "precio":  15000,
