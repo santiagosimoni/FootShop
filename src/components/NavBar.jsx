@@ -34,24 +34,3 @@ const NavBar = () => {
 }
 
 export default NavBar
-
-/*
-<div className='categorias'>
-        <div className='categorias-nombre'>
-          <h2>Categorias de las camisetas</h2>
-        </div >
-        <div className='categorias-lista'>
-          <ul>
-            <Link to={`/category/${"Selecciones nacionales"}`}>
-              <li>Selecciones nacionales</li>
-            </Link>
-            <Link to={`/category/${"Futbol argentino"}`}>
-              <li>Futbol argentino</li>
-            </Link>
-            <Link to={`/category/${"Futbol europeo"}`}>
-              <li>Futbol europeo</li>
-            </Link>
-          </ul>
-        </div>
-      </div>
-      */
