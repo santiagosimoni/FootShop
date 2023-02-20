@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Cart from './components/Cart'
 import Inicio from './components/Inicio'
 import ItemDetailContainer from './components/ItemDetailContainer'
 import ItemListContainer from './components/ItemListContainer'
@@ -16,7 +17,7 @@ function App() {
           <Route exact path='/catalogo' element={<ItemListContainer />}/>
           <Route exact path='/catalogo/:categoria' element={<ItemListContainer />}/>
           <Route exact path='/detail/:id' element={<ItemDetailContainer />}/>
-
+          <Route exact path='/cart' element={<Cart />}/>
         </Routes>
       </BrowserRouter>
     </>
