@@ -16,9 +16,7 @@ const Cart = () => {
     setCarrito(nuevoCarrito)
   }
   
-
-  return carrito.length > 0? (
-   carrito.map((elem) =>{
+   return (carrito.map((elem) =>{
     return(
     <>
       <div className='carrito-content' key={elem.id}>
@@ -28,20 +26,12 @@ const Cart = () => {
         <h3>Cantidad a comprar: {elem.stock}</h3>
         <h3>Total de producto : ${elem.stock*elem.precio}</h3>
         <h3 className='eliminar-prod' onClick={()=> eliminarProd(elem.id)}>X</h3>
-        <button>Finalizar compra</button>
       </div>
     </>
     )
   }
   )
-  
-  ): 
-    <div className='carrito-vacio'>
-      <h2>El carrito se encuentra vacio!</h2>
-      <Link to={'/catalogo'}>
-        <button> Volver a la tienda</button>
-      </Link>
-    </div>
+  )
 }
 
 
