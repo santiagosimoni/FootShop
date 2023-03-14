@@ -63,7 +63,7 @@ body{
     margin: 1rem;
     color: #b5d829;
 }
-.lista-menu li:hover{
+.lista-menu li p:hover{
   color: #FEFAF1;
   transition: 0.5s;
 }
@@ -78,6 +78,10 @@ body{
     font-size: 1.5rem;
     height: 1.5rem;
     color: #b5d829;
+}
+.fa-solid:hover{
+  transform: scale(1.1);
+  transition: 0.2s;
 }
 
 
@@ -162,8 +166,18 @@ body{
     color: white;
     transition: 0.5s;
   }
-
-
+  .titulo-camisetas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    font-size: 5rem;
+    background: rgb(28,13,2);
+    background: radial-gradient(circle, rgba(28,13,2,1) 0%, rgba(181,216,41,1) 85%);
+    color: rgba(181,216,41,1);
+    text-decoration: underline;
+    border-radius: 50px;
+  }
 
   .contenedor-ancho-detail{
     margin: 5rem;
@@ -232,4 +246,53 @@ body{
   .contenedor-contador span{
     font-size: 1rem;
     margin: 1rem;
+  }
+  .container-footer{
+    background-color: #b5d829;
+    height: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20rem ;
+  }
+  .seccion-footer{
+    flex-direction: column;
+  }
+  .seccion-footer h2{
+    font-size: 2rem;
+    text-decoration: overline;
+  }
+
+
+  .carrito-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 2rem;
+    box-shadow: -1px 2px 11px 3px rgba(0,0,0,1);
+    -webkit-box-shadow: -1px 2px 11px 3px rgba(0,0,0,1);
+    -moz-box-shadow: -1px 2px 11px 3px rgba(0,0,0,1);
+  }
+  .carrito-content img{
+    width: 8rem;
+  }
+  .carrito-vacio{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 15rem;
+  }
+  .carrito-vacio h2{
+    font-size: 3rem;
+  }
+  .carrito-vacio button{
+    margin: 1rem;
+    padding: 1rem;
+    width: 15rem;
+  }
+  .carrito-vacio button:hover{
+    background-color: #b5d829;
+    cursor: pointer;
+    transition: 0.2s;
   }

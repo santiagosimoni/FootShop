@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom'
-import productos from '../productos.json'
 import ItemList from './ItemList'
 import { useState, useEffect } from 'react'
+import { collection, getDocs, getFirestore } from "firebase/firestore";
 
 
 const ItemListContainer = () => {
@@ -12,37 +12,24 @@ const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
 
   
-  const filtroCategory= productos.filter((e)=> e.categoria === categoria)
+  const filtroCategory= products.filter((e)=> e.categoria === categoria)
   
-  function modProductos (){
-    return new Promise ((resolve, reject) =>{
-      if(productos.length === 0){
-        reject (new Error("No se encontraron productos en este momento"))
-      }
-      setTimeout(() => {
-        resolve(productos)
-      }, 2000);
-    })
-  }
-
-
-  async function fetchingProd(){
-    try {
-      const prodFetched = await modProductos()
-      setProducts(prodFetched)
-    }catch(err) {
-      console.log(err)
-    }
-  }
-
-
-  useEffect(()=>{
-    fetchingProd()
-  },[categoria])
+  useEffect(() => {
+    const db = getFirestore();
+    const camisetasCollection = collection(db, "camisetas");
+    getDocs(camisetasCollection).then((querySnapshot) => {
+      const items = querySnapshot.docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id,
+      }));
+      setProducts(items);
+    });
+  }, []);
 
   return (
     <>
-      {categoria ? <ItemList prod={filtroCategory} /> : <ItemList prod={productos} /> }
+      <h1 className='titulo-camisetas'>Camisetas</h1>
+      {categoria ? <ItemList prod={filtroCategory} /> : <ItemList prod={products} /> }
     </>
   )
 }

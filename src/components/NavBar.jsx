@@ -17,13 +17,13 @@ const NavBar = () => {
                   <li><p>Todo el catalogo</p> </li>
                 </Link>
                   <Link to={`/catalogo/${"Selecciones nacionales"}`} style={{ textDecoration: 'none' }}>
-                    <li>Selecciones nacionales</li>
+                    <li><p>Selecciones nacionales</p></li>
                   </Link >
                 <Link to={`/catalogo/${"Futbol argentino"}`} style={{ textDecoration: 'none' }}>
-                  <li>Futbol argentino</li>
+                  <li><p>Futbol argentino</p></li>
                 </Link>
                 <Link to={`/catalogo/${"Futbol europeo"}`} style={{ textDecoration: 'none' }}>
-                  <li>Futbol europeo</li>
+                  <li><p>Futbol europeo</p></li>
                 </Link>
               </ul>
             </nav >
