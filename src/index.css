@@ -115,9 +115,9 @@ body{
     align-items: center;
     text-align: center;
     margin: 20px;
-    box-shadow: 0px 0px 7px 3px #b5d829;
-    -webkit-box-shadow: 0px 0px 7px 3px #b5d829;
-    -moz-box-shadow: 0px 0px 7px 3px #b5d829;
+    box-shadow: 0px 0px 7px 3px #1c0d02;
+    -webkit-box-shadow: 0px 0px 7px 3px #1c0d02;
+    -moz-box-shadow: 0px 0px 7px 3px #1c0d02;
   }
   .tarjetas:hover{
     transform: scale(1.05);
@@ -172,9 +172,7 @@ body{
     align-items: center;
     margin-top: 5rem;
     font-size: 5rem;
-    background: rgb(28,13,2);
-    background: radial-gradient(circle, rgba(28,13,2,1) 0%, rgba(181,216,41,1) 85%);
-    color: rgba(181,216,41,1);
+    color: #1c0d02;
     text-decoration: underline;
     border-radius: 50px;
   }
@@ -296,10 +294,44 @@ body{
     cursor: pointer;
     transition: 0.2s;
   }
-.boton-finalizar{
-  display: flex;
-  justify-content: center;
-}
+
+  
+  .form-container-tamano{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem;
+    margin-top: 5rem;
+    height: 25rem ;
+    border-radius: 50px;
+  }
+  .form-container{
+    text-align: center;
+    font-size: 1.2rem;
+    height: 25rem;
+    width: 60rem;
+    border: #1c0d02 solid 1px;
+    border-radius: 20px;
+  }
+  .form-celdas{
+    display: block;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  .form-celdas label{
+    display: block;
+    font-size: 1.5rem;
+    color: #849c25;
+  }
+  .form-celdas input{
+    width: 25rem;
+    height: 2rem;
+  }
+  .order{
+    font-size: 1.5rem;
+    color: #849c25;
+  }
+
 .ov-btn-slide-left {
   background: #000000; 
   color: #b5d829;
@@ -309,17 +341,15 @@ body{
   position: relative;
   z-index: 1;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30rem;
+  width: 15rem;
+  margin-top: 4rem;
 }
 .ov-btn-slide-left:hover {
-  color: #000000; /* color de fuente hover */
+  color: #000000;
 }
 .ov-btn-slide-left::after {
   content: "";
-  background: #b5d829; /* color de fondo hover */
+  background: #b5d829;
   position: absolute;
   z-index: -1;
   padding: 16px 20px;
@@ -338,4 +368,10 @@ body{
   bottom: 0;
   -webkit-transition: all 0.7s;
   transition: all 0.7s;
+}
+.total-prod{
+  display: flex;
+  font-size: 1.1rem;
+  margin: 2rem;
+  text-decoration: underline;
 }

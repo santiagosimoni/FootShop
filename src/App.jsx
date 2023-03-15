@@ -23,8 +23,8 @@ function App() {
             <Route exact path='/detail/:id' element={<ItemDetailContainer />}/>
             <Route exact path='/cart' element={<CartElements />}/>
           </Routes>
-        </BrowserRouter>
         <Footer />
+        </BrowserRouter>
       </StateComponent>
     </>
   )

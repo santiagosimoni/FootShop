@@ -1,10 +1,11 @@
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
 import { CarritoContext } from '../context/CartContext'
 
 const Cart = () => {
 
   const {carrito, setCarrito} = useContext(CarritoContext)
+
+
 
   const eliminarProd = (id)=>{
     const foundId = carrito.find((element)=> element.id === id)
@@ -16,6 +17,9 @@ const Cart = () => {
     setCarrito(nuevoCarrito)
   }
   
+
+
+
    return (carrito.map((elem) =>{
     return(
     <>

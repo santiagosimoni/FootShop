@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import ItemList from './ItemList'
 import { useState, useEffect } from 'react'
 import { collection, getDocs, getFirestore } from "firebase/firestore";
@@ -28,7 +28,7 @@ const ItemListContainer = () => {
 
   return (
     <>
-      <h1 className='titulo-camisetas'>Camisetas</h1>
+      <h1 className='titulo-camisetas animate__animated animate__slideInDown' >Camisetas</h1>
       {categoria ? <ItemList prod={filtroCategory} /> : <ItemList prod={products} /> }
     </>
   )
