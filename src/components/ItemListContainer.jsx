@@ -11,25 +11,39 @@ const ItemListContainer = () => {
 
   const [products, setProducts] = useState([]);
 
+  const [isLoading, setIsLoading] = useState(true);
+
   
-  const filtroCategory= products.filter((e)=> e.categoria === categoria)
+  const filteredProducts = categoria ? products.filter((e) => e.categoria === categoria) : products;
   
+  async function loadProducts() {
+  const db = getFirestore();
+  const camisetasCollection = collection(db, "camisetas");
+  const querySnapshot = await getDocs(camisetasCollection);
+  const items = querySnapshot.docs.map((doc) => ({
+    ...doc.data(),
+    id: doc.id,
+  }));
+  setProducts(items);
+}
+
   useEffect(() => {
-    const db = getFirestore();
-    const camisetasCollection = collection(db, "camisetas");
-    getDocs(camisetasCollection).then((querySnapshot) => {
-      const items = querySnapshot.docs.map((doc) => ({
-        ...doc.data(),
-        id: doc.id,
-      }));
-      setProducts(items);
+    setTimeout(() => {
+      setIsLoading(true);
+      loadProducts().then(() => {
+        setIsLoading(false);
     });
-  }, []);
+  }, 1500);
+}, []);
 
   return (
     <>
       <h1 className='titulo-camisetas animate__animated animate__slideInDown' >Camisetas</h1>
-      {categoria ? <ItemList prod={filtroCategory} /> : <ItemList prod={products} /> }
+      {isLoading ? (
+      <p className='loading'>Loading...</p>
+      ) : (
+      <ItemList prod={filteredProducts} />
+)}
     </>
   )
 }

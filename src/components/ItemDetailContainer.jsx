@@ -8,6 +8,7 @@ const ItemDetailContainer = () => {
 
   const [product, setProduct] = useState([]);
 
+  const [loading, setLoading] = useState(true);
 
 
   
@@ -20,16 +21,19 @@ const ItemDetailContainer = () => {
         id: doc.id,
       }));
       setProduct(items);
+      setLoading(false);
     });
   }, []);
 
-
-
   return (
     <>
-      <ItemDetail prod={product} />        
+      {loading ? (
+        <p className='loading'>Loading...</p>
+      ) : (
+        <ItemDetail prod={product} />
+      )}
     </>
-)
+  );
 }
 
 export default ItemDetailContainer

@@ -14,15 +14,21 @@ function restar(){
   if(contador <=1 ? contador == 1 : setContador(contador -1));
 }
 
-const agregarCarrito = (prod) =>{
-  const productoRepeat= carrito.find((item) => item.id === prod.id)
-  if(productoRepeat){
-    setCarrito(carrito.map((item) => (item.id === prod.id ? { ...prod, stock: productoRepeat.stock + contador } : item)));
-  }else{
-    setCarrito([...carrito, prod]) ;
+const agregarCarrito = (prod) => {
+  const productoExistente = carrito.some((item) => item.id === prod.id);
 
+  if (productoExistente) {
+    setCarrito(
+      carrito.map((item) =>
+        item.id === prod.id
+          ? { ...item, stock: item.stock + contador }
+          : item
+      )
+    );
+  } else {
+    setCarrito([...carrito, { ...prod, stock: contador }]);
   }
-}
+};
 
   return (
     <>

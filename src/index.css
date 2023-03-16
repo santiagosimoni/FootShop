@@ -15,6 +15,7 @@ body{
   background-image: url(/src/imagenes/background2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+
 }
 .titulo{
   display: flex;
@@ -106,6 +107,7 @@ body{
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 5rem;
+    
 }
   .tarjetas {
     height: 22rem;
@@ -115,6 +117,7 @@ body{
     align-items: center;
     text-align: center;
     margin: 20px;
+    border-radius: 25px;
     box-shadow: 0px 0px 7px 3px #1c0d02;
     -webkit-box-shadow: 0px 0px 7px 3px #1c0d02;
     -moz-box-shadow: 0px 0px 7px 3px #1c0d02;
@@ -173,8 +176,6 @@ body{
     margin-top: 5rem;
     font-size: 5rem;
     color: #1c0d02;
-    text-decoration: underline;
-    border-radius: 50px;
   }
 
   .contenedor-ancho-detail{
@@ -246,19 +247,29 @@ body{
     margin: 1rem;
   }
   .container-footer{
-    background-color: #b5d829;
-    height: 6rem;
+    background-color: #1c0d02;
+    height: 10rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     margin-top: 20rem ;
+    color: #b5d829;
   }
   .seccion-footer{
     flex-direction: column;
   }
   .seccion-footer h2{
-    font-size: 2rem;
-    text-decoration: overline;
+    font-size: 3rem;
+  }
+  .seccion-footer h5{
+    font-size: 1rem;
+  }
+  .redes-footer a img{
+    text-decoration: none;
+    color: #b5d829;
+    margin: 1rem;
+    width: 1.5rem;
   }
 
 
@@ -374,4 +385,14 @@ body{
   font-size: 1.1rem;
   margin: 2rem;
   text-decoration: underline;
+}
+.loading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+.eliminar-prod{
+  cursor: pointer;
 }
