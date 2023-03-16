@@ -4,6 +4,7 @@ import { CarritoContext } from '../context/CartContext'
 const ItemCount = ({prod}) => {
   const [contador, setContador]= useState(1)
   const { carrito, setCarrito } = useContext(CarritoContext)
+  const [showNotification, setShowNotification] = useState(false);
 
   function sumar(){
     if(contador < prod.cantidad ? setContador (contador+1): '');
@@ -27,19 +28,28 @@ const agregarCarrito = (prod) => {
     );
   } else {
     setCarrito([...carrito, { ...prod, stock: contador }]);
+    setShowNotification(true);
+    setTimeout(() => setShowNotification(false), 2500);
   }
 };
 
-  return (
-    <>
-      <div className='contenedor-contador'>
-        <button onClick={sumar}>+</button>
-        <span>{contador}</span>
-        <button onClick={restar}>-</button>
-        <div className='detail-boton'><button onClick={() =>agregarCarrito(prod)}>Sumar al carrito!</button></div >
+return (
+  <>
+    <div className="contenedor-contador">
+      <button onClick={sumar}>+</button>
+      <span>{contador}</span>
+      <button onClick={restar}>-</button>
+      <div className="detail-boton">
+        <button onClick={() => agregarCarrito(prod)}>Sumar al carrito!</button>
       </div>
-    </>
-  )
-}
+    </div>
+    {showNotification && (
+      <div className="notificacion">
+        {prod.nombre} agregado al carrito!
+      </div>
+    )}
+  </>
+);
+};
 
 export default ItemCount

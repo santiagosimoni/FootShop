@@ -196,9 +196,8 @@ body{
   .detail-nombre{
     text-align: center;
     margin: 3rem;
-    font-size: 2.5rem;
-    text-decoration:overline;
-    font-family: 'Fugaz One', cursive;
+    font-size: 4rem;
+    font-family: 'Squada One', cursive;
   }
   .detail-desc{
     text-align: center;
@@ -246,6 +245,16 @@ body{
     font-size: 1rem;
     margin: 1rem;
   }
+.notificacion{
+  display: flex;
+  font-size: 1.2rem;
+  background-color: #b5d829;
+  color: #1c0d02;
+  align-items: center;
+  justify-content: center;
+}
+
+
   .container-footer{
     background-color: #1c0d02;
     height: 10rem;
@@ -354,6 +363,7 @@ body{
   overflow: hidden;
   width: 15rem;
   margin-top: 4rem;
+  cursor: pointer;
 }
 .ov-btn-slide-left:hover {
   color: #000000;
