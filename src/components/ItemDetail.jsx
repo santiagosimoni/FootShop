@@ -1,9 +1,8 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import ItemCount from './ItemCount'
 import { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
-import { CarritoContext } from '../context/CartContext';
 
 const ItemDetail = ({prod}) => {
 
