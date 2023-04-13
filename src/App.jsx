@@ -1,6 +1,4 @@
-import { useState } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Cart from './components/Cart'
 import CartElements from './components/CartElements'
 import Footer from './components/Footer'
 import Inicio from './components/Inicio'

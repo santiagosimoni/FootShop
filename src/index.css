@@ -13,6 +13,7 @@ body{
   width: 100%;
   height: 100vh;
   background-image: url(/src/imagenes/background2.jpg);
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -21,6 +22,7 @@ body{
   display: flex;
   width: 100%;
   justify-content: center;
+  text-align: center;
   align-items: center;
   margin-bottom: 2rem;
 }
@@ -42,6 +44,9 @@ body{
   height: 4rem;
   background-color: #1c0d02;  
 }
+.abrir-menu, .cerrar-menu{
+  display: none;
+}
 .contenedor-menu-nombre h2{
   color: #b5d829;
   margin-left: 1rem;
@@ -49,8 +54,9 @@ body{
   font-family: 'Monoton', cursive;
 }
 .contenedor-menu-nombre h2:hover{
+  border-bottom: 1px solid #FEFAF1;
   color: #FEFAF1;
-  transition: 0.5s;
+  transition: 0.3s;
 
 }
 .lista-menu ul{
@@ -60,13 +66,15 @@ body{
 }
 .lista-menu li{
     display: flex;
+    position: relative;
     font-size: 1.2rem;
     margin: 1rem;
     color: #b5d829;
 }
 .lista-menu li p:hover{
+  border-bottom: 1px solid white;
   color: #FEFAF1;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 .cart{
     display: flex;
@@ -178,6 +186,10 @@ body{
     color: #1c0d02;
   }
 
+
+
+
+
   .contenedor-ancho-detail{
     margin: 5rem;
   }
@@ -264,6 +276,9 @@ body{
     text-align: center;
     margin-top: 20rem ;
     color: #b5d829;
+    width: 100%;
+    position: initial;
+    bottom: 0;
   }
   .seccion-footer{
     flex-direction: column;
@@ -405,4 +420,56 @@ body{
 }
 .eliminar-prod{
   cursor: pointer;
+}
+
+
+@media (max-width:900px) {
+  .columna-detail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .contenedor-imagen{
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    align-content: center;
+  }
+  .contenedor-menu{
+    display: flex;
+    justify-content: space-between;
+  }
+  .abrir-menu{
+    text-align: center;
+  }
+  .abrir-menu, .cerrar-menu{
+    display: block;
+    width: 1.5rem;
+    cursor: pointer;
+    background-color: white;
+  }
+  .lista-menu{
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        gap: 3rem;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        padding: 2rem;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+        background-color: black;
+        z-index: 10;
+  }
+  .lista-menu ul{
+    flex-direction: column;
+  }
+  .lista-menu.visible{
+    opacity: 1;
+    visibility: visible;
+  }
 }

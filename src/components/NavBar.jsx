@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import CartWidget from './CartWidget'
+import abrir from '../imagenes/menu.png'
+import cerrar from '../imagenes/cerrar-el-simbolo-de-la-cruz-en-un-circulo.png'
 
 const NavBar = () => {
+
+
+  const[ver, setVer]= useState('lista-menu visible')
+  const [clase, setClase] =useState('lista-menu')
+
+
   return (
     <>
       <div className='contenedor-menu'>
@@ -11,7 +19,9 @@ const NavBar = () => {
             <h2>Footshop</h2>
           </Link>
         </div >
-          <nav className='lista-menu'>
+        <img src={abrir} alt="" className='abrir-menu' onClick={()=>{setClase(ver)}} />
+          <nav className={clase} onClick={()=>{setClase('lista-menu')}}>
+            <img src={cerrar} alt="" className='cerrar-menu' />
               <ul>
                 <Link to='/catalogo' style={{ textDecoration: 'none' }}>
                   <li><p>Todo el catalogo</p> </li>
