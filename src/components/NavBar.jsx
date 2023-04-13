@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import CartWidget from './CartWidget'
 import abrir from '../imagenes/menu.png'
-import cerrar from '../imagenes/cerrar-el-simbolo-de-la-cruz-en-un-circulo.png'
+import cerrar from '../imagenes/cerrar.png'
 
 const NavBar = () => {
 
