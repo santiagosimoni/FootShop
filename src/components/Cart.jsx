@@ -29,7 +29,7 @@ const Cart = () => {
         <h3>${elem.precio}</h3>
         <h3>Cantidad a comprar: {elem.stock}</h3>
         <h3>Total de producto : ${elem.stock*elem.precio}</h3>
-        <h3 className='eliminar-prod' onClick={()=> eliminarProd(elem.id)}>X</h3>
+        <button className='eliminar-prod' onClick={()=> eliminarProd(elem.id)}>Eliminar</button>
       </div>
     </>
     )

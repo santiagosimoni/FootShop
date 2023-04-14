@@ -419,9 +419,28 @@ body{
   margin-top: 2rem;
 }
 .eliminar-prod{
+  text-transform: uppercase;
+  margin: 0.5rem;
+  color: black;
   cursor: pointer;
+  background: #b5d829;
+  font-family: inherit;
+  padding: 0.2em 1em;
+  font-weight: 600;
+  font-size: 15px;
+  border: 3px solid black;
+  border-radius: 0.4em;
 }
 
+.eliminar-prod:hover {
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0.15em 0.15em;
+}
+
+.eliminar-prod:active {
+  transform: translate(0.05em, 0.05em);
+  box-shadow: 0.05em 0.05em;
+}
 
 @media (max-width:900px) {
   .titulo h1 a{
@@ -474,5 +493,20 @@ body{
   .lista-menu.visible{
     opacity: 1;
     visibility: visible;
+  }
+  .contenedor-imagen-detail img{
+    width: 20rem;
+  }
+  .carrito-content{
+    display: flex;
+    flex-direction: column;
+  }
+  .eliminar-prod{
+    padding: 0.1em 0.8em;
+    width: 80%;
+  }
+  .tarjetas{
+    margin: 7px;
+    margin-top: 2rem;
   }
 }
